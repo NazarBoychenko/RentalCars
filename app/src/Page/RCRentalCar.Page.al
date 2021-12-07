@@ -1,12 +1,12 @@
-page 50000 RentalCar
+page 50000 "RC RentalCar"
 {
-    
+
     ApplicationArea = All;
     Caption = 'RentalCar';
     PageType = List;
-    SourceTable = "Rental Car";
+    SourceTable = "RC Rental Car";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -38,7 +38,7 @@ page 50000 RentalCar
                     ToolTip = 'Specifies the value of the Machine number field.';
                     ApplicationArea = All;
                 }
-                field("Type"; Rec."Type")
+                field(Type; Rec."Type")
                 {
                     ToolTip = 'Specifies the value of the Type field.';
                     ApplicationArea = All;
@@ -46,5 +46,5 @@ page 50000 RentalCar
             }
         }
     }
-    
+
 }

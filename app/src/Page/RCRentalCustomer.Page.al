@@ -1,12 +1,12 @@
-page 50001 RentalCustomer
+page 50001 "RC RentalCustomer"
 {
-    
+
     ApplicationArea = All;
     Caption = 'RentalCustomer';
     PageType = List;
-    SourceTable = "Rental Customer";
+    SourceTable = "RC Rental Customer";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -46,5 +46,5 @@ page 50001 RentalCustomer
             }
         }
     }
-    
+
 }

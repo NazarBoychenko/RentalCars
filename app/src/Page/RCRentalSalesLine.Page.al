@@ -4,7 +4,7 @@ page 50003 "RC RentalSalesLine"
     ApplicationArea = All;
     Caption = 'RentalSalesLine';
     PageType = List;
-    SourceTable = "Rental Sales Line";
+    SourceTable = "RC Rental Sales Line";
     UsageCategory = Lists;
 
     layout
