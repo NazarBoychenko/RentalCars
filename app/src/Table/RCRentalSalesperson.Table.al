@@ -1,36 +1,36 @@
-table 50002 "Rental Salesperson"
+table 50002 "RC Rental Salesperson"
 {
     Caption = 'Rental Salesperson';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
-        field(1; "No."; Code[20])
+        field(10; "No."; Code[20])
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
         }
-        field(2; Name; Text[50])
+        field(20; Name; Text[50])
         {
             Caption = 'Name';
             DataClassification = CustomerContent;
         }
-        field(3; "phone number"; Integer)
+        field(30; "phone number"; Integer)
         {
             Caption = 'phone number';
             DataClassification = CustomerContent;
         }
-        field(4; "Place of residence"; Text[50])
+        field(40; "Place of residence"; Text[50])
         {
             Caption = 'Place of residence';
             DataClassification = CustomerContent;
         }
-        field(5; Salary; Integer)
+        field(50; Salary; Integer)
         {
             Caption = 'Salary';
             DataClassification = CustomerContent;
         }
-        field(6; Experience; Integer)
+        field(60; Experience; Integer)
         {
             Caption = 'Experience';
             DataClassification = CustomerContent;
@@ -43,5 +43,5 @@ table 50002 "Rental Salesperson"
             Clustered = true;
         }
     }
-    
+
 }

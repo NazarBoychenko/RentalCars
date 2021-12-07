@@ -5,32 +5,32 @@ table 50000 "RC Rental Sales Header"
 
     fields
     {
-        field(1; "Doc No."; Code[20])
+        field(10; "Doc No."; Code[20])
         {
             Caption = 'Doc No.';
             DataClassification = CustomerContent;
         }
-        field(2; "Salesperson No."; Code[20])
+        field(20; "Salesperson No."; Code[20])
         {
             Caption = 'Salesperson No.';
             DataClassification = CustomerContent;
         }
-        field(3; "Customer No."; Code[20])
+        field(30; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
             DataClassification = CustomerContent;
         }
-        field(4; "Line No."; Code[20])
+        field(40; "Line No."; Code[20])
         {
             Caption = 'Line No.';
             DataClassification = CustomerContent;
         }
-        field(5; Price; Integer)
+        field(50; Price; Integer)
         {
             Caption = 'Price';
             DataClassification = CustomerContent;
         }
-        field(6; "Date"; Date)
+        field(60; "Date"; Date)
         {
             Caption = 'Date';
             DataClassification = CustomerContent;
