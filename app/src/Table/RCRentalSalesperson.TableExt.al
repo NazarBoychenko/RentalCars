@@ -1,47 +1,36 @@
-table 50002 "RC Rental Salesperson"
+tableextension 50002 "RC Rental Salesperson" extends "Salesperson/Purchaser"
 {
-    Caption = 'Rental Salesperson';
-    DataClassification = ToBeClassified;
-
     fields
     {
-        field(10; "No."; Code[20])
+        field(50000; "RC No."; Code[20])
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
         }
-        field(20; Name; Text[50])
+        field(50001; "RC Name"; Text[50])
         {
             Caption = 'Name';
             DataClassification = CustomerContent;
         }
-        field(30; "phone number"; Integer)
+        field(50002; "RC Phone Number"; Integer)
         {
-            Caption = 'phone number';
+            Caption = 'Phone Number';
             DataClassification = CustomerContent;
         }
-        field(40; "Place of residence"; Text[50])
+        field(50003; "RC Place of Residence"; Text[50])
         {
-            Caption = 'Place of residence';
+            Caption = 'Place of Residence';
             DataClassification = CustomerContent;
         }
-        field(50; Salary; Integer)
+        field(50004; "RC Salary"; Integer)
         {
             Caption = 'Salary';
             DataClassification = CustomerContent;
         }
-        field(60; Experience; Integer)
+        field(50005; "RC Experience"; Integer)
         {
             Caption = 'Experience';
             DataClassification = CustomerContent;
         }
     }
-    keys
-    {
-        key(PK; "No.")
-        {
-            Clustered = true;
-        }
-    }
-
 }

@@ -13,7 +13,7 @@ page 50003 "RC RentalSalesLine"
         {
             repeater(General)
             {
-                field("Line No."; Rec."Line No.")
+                field("Line No."; Rec."Document No.")
                 {
                     ToolTip = 'Specifies the value of the Line No. field.';
                     ApplicationArea = All;

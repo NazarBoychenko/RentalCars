@@ -1,47 +1,36 @@
-table 50003 "RC Rental Customer"
+tableextension 50001 "RC Rental Customer" extends Customer
 {
-    Caption = 'Rental Customer';
-    DataClassification = ToBeClassified;
-
     fields
     {
-        field(10; "No."; Code[20])
+        field(50000; "RC No."; Code[20])
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
         }
-        field(20; Name; Text[50])
+        field(50001; "RC Name"; Text[50])
         {
             Caption = 'Name';
             DataClassification = CustomerContent;
         }
-        field(30; Discount; Decimal)
+        field(50002; "RC Discount"; Decimal)
         {
             Caption = 'Discount';
             DataClassification = CustomerContent;
         }
-        field(40; Blacklist; Boolean)
+        field(50003; "RC Blacklist"; Boolean)
         {
             Caption = 'Blacklist';
             DataClassification = CustomerContent;
         }
-        field(50; "Passport data"; Text[50])
+        field(50004; "RC Passport Data"; Text[50])
         {
-            Caption = 'Passport data';
+            Caption = 'Passport Data';
             DataClassification = CustomerContent;
         }
-        field(60; "Phone number"; Integer)
+        field(50005; "RC Phone Number"; Integer)
         {
-            Caption = 'Phone number';
+            Caption = 'Phone Number';
             DataClassification = CustomerContent;
         }
     }
-    keys
-    {
-        key(PK; "No.")
-        {
-            Clustered = true;
-        }
-    }
-
 }
