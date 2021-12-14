@@ -39,6 +39,7 @@ table 50000 "RC Rental Sales Header"
             DataClassification = CustomerContent;
         }
     }
+
     keys
     {
         key(PK; "No.")
@@ -46,5 +47,18 @@ table 50000 "RC Rental Sales Header"
             Clustered = true;
         }
     }
+
+    local procedure InitInsert()
+    var
+        RCRentalSalesHeader: Record "RC Rental Sales Header";
+        RCRentalGeneration: Codeunit "RC Rental Generation";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+    begin
+        If RCRentalSalesHeader."No." <> '' then
+            exit;
+
+        RCRentalGeneration.TestNoSeries(RCRentalSalesHeader);
+        NoSeriesMgt.InitSeries(RCRentalSalesHeader."No.", xRec."No.", 0D, RCRentalSalesHeader."No.", RCRentalSalesHeader."No.");
+    end;
 
 }

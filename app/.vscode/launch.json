@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "sandbox",
-            "startupObjectId": 50000,
+            "startupObjectId": 50001,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
