@@ -13,7 +13,6 @@ table 50001 "RC Rental Sales Line"
         }
         field(20; "Line No."; Code[20])
         {
-            TableRelation = "Sales Header"."No.";
             Caption = 'Line No.';
             DataClassification = CustomerContent;
         }
@@ -29,20 +28,33 @@ table 50001 "RC Rental Sales Line"
             Caption = 'Name';
             DataClassification = CustomerContent;
         }
-        field(50; "Manufacturer company"; Text[50])
+        field(50; Discount; Decimal)
         {
-            Caption = 'Manufacturer company';
+            TableRelation = "Item"."RC Discount";
+            Caption = 'Discount';
             DataClassification = CustomerContent;
         }
-        field(60; "Date of creation"; Date)
+        field(60; Color; Text[50])
         {
-            Caption = 'Date of creation';
+            TableRelation = "Item"."RC Color";
+            Caption = 'Color';
             DataClassification = CustomerContent;
         }
-        field(70; "Start date"; Date)
+        field(70; "Machine number"; Integer)
         {
-            Caption = 'Start date';
+            TableRelation = "Item"."RC Machine number";
+            Caption = 'Machine number';
             DataClassification = CustomerContent;
+        }
+        field(80; "Car Type"; Text[50])
+        {
+            TableRelation = "Item"."RC Car Type";
+            Caption = 'Car Type';
+            DataClassification = ToBeClassified;
+        }
+        field(90; "No. Sireas"; Code[20])
+        {
+            DataClassification = ToBeClassified;
         }
     }
     keys
@@ -52,5 +64,22 @@ table 50001 "RC Rental Sales Line"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    begin
+        InitInsert();
+    end;
+
+    local procedure InitInsert()
+    var
+        RCRentalGeneration: Codeunit "RC Rental Generation";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+    begin
+        If Rec."Line No." <> '' then
+            exit;
+
+        //RCRentalGeneration.TestNoSeries(RCRentalSalesHeader);
+        NoSeriesMgt.InitSeries('A-ORD', '', 0D, Rec."Line No.", "No. Sireas");
+    end;
 
 }

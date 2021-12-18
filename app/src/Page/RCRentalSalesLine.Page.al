@@ -1,11 +1,11 @@
-page 50003 "RC RentalSalesLine"
+page 50001 "RC Rental Sales Line"
 {
 
-    ApplicationArea = All;
-    Caption = 'RentalSalesLine';
-    PageType = List;
+    //ApplicationArea = All;
+    Caption = 'Rental Sales Line';
+    PageType = ListPart;
     SourceTable = "RC Rental Sales Line";
-    UsageCategory = Lists;
+    //UsageCategory = Lists;
 
     layout
     {
@@ -13,7 +13,12 @@ page 50003 "RC RentalSalesLine"
         {
             repeater(General)
             {
-                field("Line No."; Rec."Document No.")
+                field("Document No."; Rec."Document No.")
+                {
+                    ToolTip = 'Specifies the value of the Document No. field.';
+                    ApplicationArea = All;
+                }
+                field("Line No."; Rec."Line No.")
                 {
                     ToolTip = 'Specifies the value of the Line No. field.';
                     ApplicationArea = All;
@@ -23,24 +28,29 @@ page 50003 "RC RentalSalesLine"
                     ToolTip = 'Specifies the value of the Item No. field.';
                     ApplicationArea = All;
                 }
-                field("Date of creation"; Rec."Date of creation")
-                {
-                    ToolTip = 'Specifies the value of the Date of creation field.';
-                    ApplicationArea = All;
-                }
-                field("Manufacturer company"; Rec."Manufacturer company")
-                {
-                    ToolTip = 'Specifies the value of the Manufacturer company field.';
-                    ApplicationArea = All;
-                }
                 field(Name; Rec.Name)
                 {
                     ToolTip = 'Specifies the value of the Name field.';
                     ApplicationArea = All;
                 }
-                field("Start date"; Rec."Start date")
+                field(Discount; Rec.Discount)
                 {
-                    ToolTip = 'Specifies the value of the Start date field.';
+                    ToolTip = 'Specifies the value of the Discount field.';
+                    ApplicationArea = All;
+                }
+                field(Color; Rec.Color)
+                {
+                    ToolTip = 'Specifies the value of the Color field.';
+                    ApplicationArea = All;
+                }
+                field("Machine number"; Rec."Machine number")
+                {
+                    ToolTip = 'Specifies the value of the Machine number field.';
+                    ApplicationArea = All;
+                }
+                field("Car Type"; Rec."Car Type")
+                {
+                    ToolTip = 'Specifies the value of the Car Type field.';
                     ApplicationArea = All;
                 }
             }

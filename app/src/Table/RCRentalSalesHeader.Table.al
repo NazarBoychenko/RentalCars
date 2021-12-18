@@ -7,25 +7,25 @@ table 50000 "RC Rental Sales Header"
     {
         field(10; "No."; Code[20])
         {
-            Caption = 'Doc No.';
+            Caption = 'No.';
             DataClassification = CustomerContent;
         }
         field(20; "Salesperson No."; Code[20])
         {
-            TableRelation = "Salesperson/Purchaser"."RC No.";
+            // TableRelation = "Salesperson/Purchaser"."RC No.";
             Caption = 'Salesperson No.';
             DataClassification = CustomerContent;
         }
         field(30; "Customer No."; Code[20])
         {
-            TableRelation = "Customer"."RC No.";
+            // TableRelation = "Customer"."RC No.";
             Caption = 'Customer No.';
             DataClassification = CustomerContent;
+            // ValidateTableRelation = false;
         }
         field(40; "Customer Name"; Text[50])
         {
-            TableRelation = "RC Rental Sales Line"."Line No.";
-            Caption = 'Line No.';
+            Caption = 'Customer Name';
             DataClassification = CustomerContent;
         }
         field(50; Price; Decimal)
@@ -38,6 +38,10 @@ table 50000 "RC Rental Sales Header"
             Caption = 'Date';
             DataClassification = CustomerContent;
         }
+        field(70; "No. Sireas"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys
@@ -48,17 +52,21 @@ table 50000 "RC Rental Sales Header"
         }
     }
 
+    trigger OnInsert()
+    begin
+        InitInsert();
+    end;
+
     local procedure InitInsert()
     var
-        RCRentalSalesHeader: Record "RC Rental Sales Header";
         RCRentalGeneration: Codeunit "RC Rental Generation";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
-        If RCRentalSalesHeader."No." <> '' then
+        If Rec."No." <> '' then
             exit;
 
-        RCRentalGeneration.TestNoSeries(RCRentalSalesHeader);
-        NoSeriesMgt.InitSeries(RCRentalSalesHeader."No.", xRec."No.", 0D, RCRentalSalesHeader."No.", RCRentalSalesHeader."No.");
+        //RCRentalGeneration.TestNoSeries(RCRentalSalesHeader);
+        NoSeriesMgt.InitSeries('A-ORD', '', 0D, Rec."No.", "No. Sireas");
     end;
 
 }

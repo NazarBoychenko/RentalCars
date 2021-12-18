@@ -8,18 +8,18 @@ enum 50001 "RC Colors"
     }
     value(1; Yelow)
     {
-        Caption = 'Red';
+        Caption = 'Yelow';
     }
     value(2; Green)
     {
-        Caption = 'Red';
+        Caption = 'Green';
     }
     value(3; White)
     {
-        Caption = 'Red';
+        Caption = 'White';
     }
     value(4; Black)
     {
-        Caption = 'Red';
+        Caption = 'Black';
     }
 }

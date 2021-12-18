@@ -1,4 +1,4 @@
-tableextension 50001 "RC Rental Customer" extends Customer
+tableextension 50004 "RC Rental Customer" extends Customer
 {
     fields
     {
@@ -6,6 +6,7 @@ tableextension 50001 "RC Rental Customer" extends Customer
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
+            TableRelation = "Customer"."RC No.";
         }
         field(50001; "RC Name"; Text[50])
         {

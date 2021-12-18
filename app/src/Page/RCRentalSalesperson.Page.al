@@ -1,12 +1,12 @@
-page 50005 "Rental Salesperson"
+page 50002 "RC Rental Salesperson"
 {
-    
+
     ApplicationArea = All;
     Caption = 'Rental Salesperson';
     PageType = List;
     SourceTable = "Salesperson/Purchaser";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -46,5 +46,5 @@ page 50005 "Rental Salesperson"
             }
         }
     }
-    
+
 }

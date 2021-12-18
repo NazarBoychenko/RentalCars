@@ -1,12 +1,12 @@
-page 50001 "Rental Car"
+page 50003 "RC Rental Car"
 {
-    
+
     ApplicationArea = All;
     Caption = 'Rental Car';
     PageType = List;
     SourceTable = Item;
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -46,5 +46,5 @@ page 50001 "Rental Car"
             }
         }
     }
-    
+
 }

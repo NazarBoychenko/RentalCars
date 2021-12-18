@@ -1,4 +1,4 @@
-tableextension 50000 "RC Rental Car" extends Item
+tableextension 50003 "RC Rental Car" extends Item
 {
     fields
     {

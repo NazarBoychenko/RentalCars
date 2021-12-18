@@ -8,10 +8,10 @@ enum 50002 "RC Type"
     }
     value(1; Truck)
     {
-        Caption = 'Car';
+        Caption = 'Truck';
     }
     value(2; Van)
     {
-        Caption = 'Car';
+        Caption = 'Van';
     }
 }
